@@ -1,4 +1,39 @@
-:root
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-Light.woff2') format('woff2'),
+  url('../fonts/NunitoSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-ExtraBold.woff2') format('woff2'),
+  url('../fonts/NunitoSans-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-SemiBold.woff2') format('woff2'),
+  url('../fonts/NunitoSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-Regular.woff2') format('woff2'),
+  url('../fonts/NunitoSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ** GLOBAL STYLES ** */
 html
 {
@@ -7,10 +42,10 @@ html
   scroll-behavior: smooth;
 }
 *,
-*::before
+*::before,
 *::after
 {
-box-sizing: inherit;
+  box-sizing: inherit;
 }
 /* ----------------- */
 /* ===== body ====== */
@@ -31,8 +66,8 @@ body
 }
 img
 {
-max-width: 100%;
-height: auto;
+  max-width: 100%;
+  height: auto;
 }
 /* *** CONTAINER *** */
 .container
@@ -40,10 +75,84 @@ height: auto;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  max-width: 1320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid red;
 }
-
+/* * HEADER * */
+.site-header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: #fff;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-heading {
+  font-family: Nunito Sans;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 33px;
+  color: #111517;
+  padding: 0;
+  margin: 0;
+}
+.site-logo-link
+{
+  text-decoration: none;
+  color: #111517;
+}
+.site-logo-link:hover
+{
+  opacity: 0.8;
+}
+.site-logo-link:active
+{
+  opacity: 0.6;
+}
+.dark-mode {
+  display: flex;
+  align-items: center;
+  font-family: Nunito Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #111517;
+  text-transform: capitalize;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.dark-mode:hover
+{
+  border-bottom: 2px solid #111517;
+}
+.dark-mode:active
+{
+  opacity: 0.6;
+}
+.dark-mode::before
+{
+  display: flex;
+  content: "";
+  width: 15px;
+  height: 14px;
+  background-image: url(../icons/half-moon.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 10px;
+}
 /* ** MAIN CONTENT ** */
 .main-content
 {
   flex-grow: 1;
+}
+.hero
+{
+  background-color: #FAFAFA;
 }
