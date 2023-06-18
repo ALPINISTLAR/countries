@@ -159,17 +159,17 @@ a {
 {
   opacity: 0.6;
 }
-.dark-mode-toggler::before
-{
-  display: flex;
-  content: "";
-  width: 15px;
-  height: 14px;
-  background-image: url(../icons/half-moon.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-right: 10px;
+.dark-mode-toggler-icon{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 7px;
+color: #111517;
 }
+.dark-mode .dark-mode-toggler-icon{
+  color: #fff;
+}
+
 /* ** MAIN CONTENT ** */
 .main-content
 {
