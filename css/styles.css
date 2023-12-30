@@ -76,6 +76,8 @@ body
   letter-spacing: 0.5px;
   background-color: var(--body-bg-color);
   color: var(--text-color);
+  transition: 0.2s linear;
+  overflow-x: hidden;
 }
 /* * * DARK MODE * * */
 .dark-mode
@@ -91,7 +93,69 @@ img
 }
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
+
+/* LOADER */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  transition: 0.2s linear, opacity 0.2s linear, visibility 0.3s linear;
+}
+
+.loader.close {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader .spinner .icon {
+  font-size: 80px;
+  color: #111517;
+}
+
+/* button */
+.button,
+button {
+  font-family: "Nunito Sans", sans-serif;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  background-color: white;
+  color: #111517;
+  text-transform: capitalize;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  padding: 7px 21px;
+  border-radius: 4px;
+  transition: 0.2s linear;
+}
+
+.scale-effect:active {
+  transform: scale(0.88);
+  transition: transform 0.2s linear;
+}
+
+.show-more {
+  margin: 60px 0;
+}
+
+.show-more .btn {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 /* *** CONTAINER *** */
 .container
 {
@@ -224,7 +288,108 @@ a {
   box-shadow: 0px 2px 9px 0px #0000000E;
 }
 
+.filters .dropdown-wrapper {
+  width: 200px;
+}
+
+.filters .dropdown-wrapper.open .dropdown-header .icon {
+transform: rotate(180deg);
+}
+
+.filters .dropdown-wrapper.open .dropdown-body {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+z-index: 9;
+}
+
+.filters .dropdown-header,
+.filters .dropdown-body {
+position: relative;
+width: 100%;
+border-radius: 6px;
+background: white;
+font-weight: 600;
+font-size: 15px;
+box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+transition: 0.2s linear;
+}
+
+.filters .dropdown-header {
+padding: 15px 20px;
+cursor: pointer;
+z-index: 2;
+}
+
+.filters .dropdown-header .icon {
+font-size: 13px;
+transition: transform 0.2s linear;
+}
+
+.filters .dropdown-body {
+position: absolute;
+margin-top: 5px;
+opacity: 0;
+visibility: hidden;
+z-index: 1;
+padding: 15px 0;
+transform: translateY(-20px);
+}
+
+.filters .dropdown-body li {
+padding: 8px 25px;
+text-transform: capitalize;
+cursor: pointer;
+}
+
+.filters .dropdown-body li:hover {
+background-color: #f2f2f2;
+}
+
+.filters .dropdown-body li:last-child {
+margin-bottom: 0;
+}
+.filters ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dark-mode .dropdown-header{
+  background-color: var(--element-bg);
+}
+.flex {
+  display: flex;
+}
+
+.flex.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex.flex-jc-c {
+  justify-content: center;
+}
+
+.flex.flex-ai-c {
+  align-items: center;
+}
+
+.flex.flex-wrap {
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
 /* * * INDEX COUNTRIES * * */
+.scale-effect{
+  transition: transform 0.5s ease;
+}
+.scale-effect:hover {
+  transform: scale(1.08);
+  transition: transform 0.5s ease;
+}
 .index-countries{
   display: flex;
   justify-content: center;
@@ -241,17 +406,19 @@ a {
 .index-countries-list-item {
   border-radius: 7px;
   max-width: 264px;
+  width: 100%;
   display: flex;
   flex-shrink: 0;
 }
 /* * * INDEX COUNTRY * * */
 .index-country {
+  width: 100%;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
   background-color: var(--element-bg);
 }
-.index-country-flag {
+.index-country-flag img {
   width: 100%;
   height: 160px;
   object-fit: cover;
@@ -260,23 +427,22 @@ a {
   padding: 24px 24px 48px;
 }
 .index-country-name {
+  display: inline-block;
   margin: 0;
   margin-bottom: 24px;
   font-family: Nunito Sans;
   font-size: 18px;
   font-weight: 800;
   line-height: 26px;
-}
-.index-country-name-link
-{
   color: var(--text-color);
   border-bottom: 2px solid transparent;
 }
-.index-country-name-link:hover
+
+.index-country-name:hover
 {
   border-bottom: 2px solid var(--text-color);
 }
-.index-country-name-link:active
+.index-country-name:active
 {
   opacity: 0.6;
 }
@@ -297,6 +463,7 @@ a {
 .index-country-details-value {
   margin-left: 4px;
 }
+
 
 @media only screen and (max-width: 1350px) {
   .index-countries-list {
