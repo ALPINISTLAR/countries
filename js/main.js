@@ -143,9 +143,12 @@ function showMorecountries() {}
     EVENTS
 */
 
+
 dropDownHeader.addEventListener("click", controlDropDown);
 searchInput.addEventListener("paste", getCountriesBySearch);
 searchInput.addEventListener("keyup", getCountriesBySearch);
+
+
 
 showMoreButton.addEventListener("click", () => {
   showMoreButton.textContent = "loading countries...";
@@ -156,6 +159,7 @@ showMoreButton.addEventListener("click", () => {
   }, 2000);
 });
 
+
 /*
     LOOPS
 */
@@ -165,8 +169,8 @@ dropDownBodyOptions.forEach((option) => {
     controlLoader("open"); // Open
     let optionValue = option.dataset.region.toLowerCase();
     optionValue == "all"
-      // ? (showMoreButton.style.display = "block")
-      // : (showMoreButton.style.display = "none");
+      ? (showMoreButton.style.display = "block")
+      : (showMoreButton.style.display = "none");
     getCountriesByRegion(optionValue);
     controlDropDown();
     // Extra Code [Can Be Omitted]
