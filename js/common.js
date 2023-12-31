@@ -66,25 +66,3 @@ function controlScrollButton() {
     scrollBtn.classList.remove("show");
   }
 }
-
-/*
-    EVENTS
-*/
-
-
-
-
-
-// scrollBtn.addEventListener("click", scrollTop);
-// switchBtn.addEventListener("click", () => {
-//    theme = theme == "light" ? "dark" : "light";
-//   chanegMode(theme, switchBtnText, switchBtnIcon);
-//   localStorage.setItem("theme", theme);
-// });
-// window.addEventListener("load", () => {
-//   let userTheme = localStorage.getItem("theme");
-//   if (userTheme != null) {
-//     chanegMode(userTheme, switchBtnText, switchBtnIcon);
-//   }
-// });
-// window.addEventListener("scroll", controlScrollButton);
