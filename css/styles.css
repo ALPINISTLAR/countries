@@ -376,12 +376,18 @@ margin-bottom: 0;
 .flex.flex-wrap {
   flex-wrap: wrap;
 }
-
-
-
-
-
-
+.dark-mode .country-info h1{
+  color: #fff;
+}
+.dark-mode .country-info div ul strong{
+  color: #fff;
+}
+.dark-mode .country-info div ul li{
+  color: #fff;
+}
+.dark-mode .col-3 strong{
+  color: #fff;
+}
 /* * * INDEX COUNTRIES * * */
 .scale-effect{
   transition: transform 0.5s ease;
